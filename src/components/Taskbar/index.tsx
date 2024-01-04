@@ -12,7 +12,7 @@ export const Taskbar = ({
   const items = [
     {
       name: "About me",
-      img: "selfie.jpg",
+      img: "images/selfie.jpg",
       click: setIsAboutModalOpen,
     },
     {
@@ -22,7 +22,7 @@ export const Taskbar = ({
     },
     {
       name: "LinkedIn",
-      img: "linkedin_logo.png",
+      img: "images/linkedin_logo.png",
       click: () =>
         window.open("https://linkedin.com/in/viktor-söderborg-3217a123b"),
     },
