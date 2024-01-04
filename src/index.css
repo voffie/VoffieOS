@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-button:single-button {
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  background-color: rgb(167, 167, 167);
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+}
+
+.bar-bg {
+  backdrop-filter: blur(5px);
+  background-color: rgba(26, 26, 26, 0.7);
+}
+
+.tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  width: 100px;
+  color: white;
+  background-color: #192733;
+  padding: 5px;
+  top: -40px;
+  left: 75%;
+  border: 1px solid white;
+}
+
+.tooltip-file-text {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  width: fit-content;
+  color: white;
+  background-color: #192733;
+  padding: 5px;
+  top: 75px;
+  left: 110%;
+  border: 1px solid white;
+}
+
+.hover-text {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.hover-text:hover .tooltip-text,
+.hover-text:hover .tooltip-file-text {
+  visibility: visible;
+}
+
+.file-grid {
+  contain: strict;
+  display: grid;
+  gap: 28px 1px;
+  grid-template-columns: repeat(auto-fill, 74px);
+  grid-template-rows: repeat(auto-fill, 70px);
+  height: calc(100% - 30px);
+  overflow: auto;
+  padding-top: 28px;
+  grid-auto-flow: row;
+  place-content: flex-start;
+}
+
+.file-grid li {
+  justify-self: center;
+}
+
+.file-explorer-container {
+  position: absolute;
+  width: 75rem;
+  height: 35rem;
+  display: inline-block;
+  top: auto;
+  left: auto;
+  cursor: auto;
+  z-index: 2;
+}
+
+.file-explorer {
+  background-color: rgb(32, 32, 32);
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 8px 0px;
+  outline: rgb(77, 77, 77) solid 1px;
+}
