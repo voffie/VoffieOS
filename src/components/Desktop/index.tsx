@@ -31,7 +31,7 @@ export const Desktop = ({ children }: Props) => {
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
   return (
-    <main className="bg-[url('wallpaper.jpg')] bg-no-repeat bg-cover h-screen fixed inset-0 overscroll-none">
+    <main className="bg-no-repeat bg-cover h-screen fixed inset-0 overscroll-none">
       <FileGrid files={files} />
       {children}
       <Taskbar

@@ -36,6 +36,10 @@ body {
   position: fixed;
 }
 
+main {
+  background-image: url("wallpaper.jpg");
+}
+
 .bar-bg {
   backdrop-filter: blur(5px);
   background-color: rgba(26, 26, 26, 0.7);
