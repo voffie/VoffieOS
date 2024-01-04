@@ -1,5 +1,12 @@
+import { Desktop } from "./components/Desktop";
+import { Header } from "./components/Header";
+
 function App() {
-  return <></>;
+  return (
+    <Desktop>
+      <Header />
+    </Desktop>
+  );
 }
 
 export default App;
