@@ -10,7 +10,7 @@ type FileProps = {
 export const File = ({ data }: FileProps) => {
   return (
     <li
-      className="h-min p-1 hover:bg-fileHover focus-within:bg-fileFocus w-fit"
+      className="h-min p-1 hover:bg-fileHover focus-within:bg-fileFocus w-fit justify-self-center"
       onDoubleClick={data.click ? data.click : undefined}
     >
       <button className={`relative ${data.tooltip ? "hover-text" : ""}`}>

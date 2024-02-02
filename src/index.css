@@ -9,6 +9,9 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  outline: 0;
+  text-rendering: optimizeLegibility;
+  user-select: none;
   color: white;
 }
 
@@ -30,14 +33,8 @@
   background-color: rgb(167, 167, 167);
 }
 
-body {
-  height: 100%;
-  overflow: hidden;
-  position: fixed;
-}
-
 main {
-  background-image: url("/images/wallpaper.jpg");
+  background: url("/images/wallpaper.jpg") no-repeat center center fixed;
 }
 
 .bar-bg {
@@ -93,21 +90,6 @@ main {
   padding-top: 28px;
   grid-auto-flow: row;
   place-content: flex-start;
-}
-
-.file-grid li {
-  justify-self: center;
-}
-
-.file-explorer-container {
-  position: absolute;
-  width: 75rem;
-  height: 35rem;
-  display: inline-block;
-  top: auto;
-  left: auto;
-  cursor: auto;
-  z-index: 2;
 }
 
 .file-explorer {
