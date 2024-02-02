@@ -34,30 +34,22 @@ export const FileExplorerModal = ({
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <Dialog.Overlay className="fixed inset-0 min-h-screen bg-gray-500 bg-opacity-75 transition-opacity" />
-          </Transition.Child>
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
             enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             enterTo="opacity-100 translate-y-0 sm:scale-100"
             leave="ease-in duration-200"
             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
-            <div className="file-explorer-container">
+            <div className="w-[75rem] h-[35rem] absolute inline-block top-auto left-auto cursor-auto z-10">
               <section className="file-explorer h-full">
                 <header className="border-b border-[rgb(43,43,43)] bg-[rgb(43,43,43)] flex relative top-0 h-fit p-2 items-center">
                   <nav className="flex w-1/3">
-                    <button className="w-4 h-4 rounded-[50%] mr-[20px] bg-[#FF5D5B] flex items-center justify-center" />
-                    <button className="w-4 h-4 rounded-[50%] mr-[20px] bg-[#FFBB39] flex items-center justify-center" />
-                    <button className="w-4 h-4 rounded-[50%] mr-[20px] bg-[#00CD4E] flex items-center justify-center" />
+                    <button
+                      className="w-4 h-4 rounded-[50%] mr-[20px] bg-[#FF5D5B] flex items-center justify-center"
+                      onClick={() => handleClose()}
+                    />
+                    <button className="w-4 h-4 rounded-[50%] mr-[20px] bg-[#FFBB39] flex items-center justify-center cursor-default" />
+                    <button className="w-4 h-4 rounded-[50%] mr-[20px] bg-[#00CD4E] flex items-center justify-center cursor-default" />
                   </nav>
                   <Dialog.Title
                     as="p"
