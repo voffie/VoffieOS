@@ -7,7 +7,7 @@ export const Header = () => {
   }, 1000);
   return (
     <nav className="absolute top-0 left-0 right-0 h-7 bar-bg flex items-center justify-center">
-      <p>{date.toUTCString()}</p>
+      <p>{`${date.toDateString()} ${date.toLocaleTimeString()}`}</p>
     </nav>
   );
 };
