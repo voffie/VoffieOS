@@ -1,4 +1,4 @@
-import { SlDocs } from "react-icons/sl";
+import { SlDocs, SlUser } from "react-icons/sl";
 
 type TaskbarProps = {
   setIsAboutModalOpen: (value: boolean) => void;
@@ -12,7 +12,7 @@ export const Taskbar = ({
   const items = [
     {
       name: "About me",
-      img: "images/selfie.jpg",
+      icon: <SlUser />,
       click: setIsAboutModalOpen,
     },
     {
@@ -40,10 +40,10 @@ export const Taskbar = ({
             <div
               key={index}
               className="cursor-pointer hover-text"
-              onClick={() => item.click(true)}
+              onClick={() => item.click()}
             >
               <img
-                className="rounded-md w-7 h-7"
+                className="rounded-md w-6 h-6"
                 src={item.img}
               />
               <span className="tooltip-text">{item.name}</span>
