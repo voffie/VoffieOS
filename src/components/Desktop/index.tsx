@@ -35,7 +35,7 @@ export const Desktop = ({ children }: Props) => {
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
   return (
-    <main className="inset-0 overscroll-none h-full w-screen fixed">
+    <main className="inset-0 overscroll-none fixed">
       <FileGrid files={files} />
       {children}
       <Taskbar
