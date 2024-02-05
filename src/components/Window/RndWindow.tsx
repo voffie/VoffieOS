@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode } from "react";
 import { Rnd } from "react-rnd";
 
 type RndProps = {
@@ -22,29 +22,17 @@ export const RndWindow = ({
   minHeight,
   lockAspectRatio,
 }: RndProps) => {
-  const [initialPosition, setInitialPosition] = useState({
-    x: Math.floor(window.innerWidth / 2 - defaultWidth / 2),
-    y: Math.floor(window.innerHeight / 2 - defaultHeight / 2),
-  });
-
-  useEffect(() => {
-    setInitialPosition({
-      x:
-        defaultX === "center"
-          ? Math.floor(window.innerWidth / 2 - defaultWidth / 2)
-          : defaultX,
-      y:
-        defaultY === "center"
-          ? Math.floor(window.innerHeight / 2 - defaultHeight / 2)
-          : defaultY,
-    });
-  }, [defaultX, defaultY, defaultWidth, defaultHeight]);
-
   return (
     <Rnd
       default={{
-        x: initialPosition.x,
-        y: initialPosition.y,
+        x:
+          defaultX === "center"
+            ? Math.floor(window.innerWidth / 2 - defaultWidth / 2)
+            : defaultX,
+        y:
+          defaultY === "center"
+            ? Math.floor(window.innerHeight / 2 - defaultHeight / 2)
+            : defaultY,
         width: defaultWidth,
         height: defaultHeight,
       }}

@@ -46,9 +46,11 @@ export const FileExplorerModal = ({
                 defaultX="center"
                 defaultY="center"
                 defaultHeight={window.innerHeight < 560 ? 0 : 560}
-                defaultWidth={window.innerWidth < 1200 ? 0 : 1200}
-                minWidth={350}
-                minHeight={250}
+                defaultWidth={
+                  window.innerWidth < 1200 ? window.innerWidth - 20 : 1200
+                }
+                minWidth={window.innerWidth < 350 ? 0 : 350}
+                minHeight={window.innerHeight < 250 ? 0 : 250}
                 lockAspectRatio
               >
                 <div className="w-full h-full absolute cursor-auto z-10">
