@@ -9,6 +9,9 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  outline: 0;
+  text-rendering: optimizeLegibility;
+  user-select: none;
   color: white;
 }
 
@@ -30,14 +33,14 @@
   background-color: rgb(167, 167, 167);
 }
 
-body {
-  height: 100%;
-  overflow: hidden;
-  position: fixed;
+main {
+  background: url("/images/wallpaper.png") no-repeat center center;
 }
 
-main {
-  background-image: url("/images/wallpaper.jpg");
+@media only screen and (max-width: 1300px) {
+  main {
+    background: #151515;
+  }
 }
 
 .bar-bg {
@@ -95,22 +98,7 @@ main {
   place-content: flex-start;
 }
 
-.file-grid li {
-  justify-self: center;
-}
-
-.file-explorer-container {
-  position: absolute;
-  width: 75rem;
-  height: 35rem;
-  display: inline-block;
-  top: auto;
-  left: auto;
-  cursor: auto;
-  z-index: 2;
-}
-
-.file-explorer {
+.window {
   background-color: rgb(32, 32, 32);
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 8px 0px;
   outline: rgb(77, 77, 77) solid 1px;
