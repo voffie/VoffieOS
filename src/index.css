@@ -34,7 +34,13 @@
 }
 
 main {
-  background: url("/images/wallpaper.jpg") no-repeat center center fixed;
+  background: url("/images/wallpaper.png") no-repeat center center;
+}
+
+@media only screen and (max-width: 1300px) {
+  main {
+    background: #151515;
+  }
 }
 
 .bar-bg {
@@ -92,7 +98,7 @@ main {
   place-content: flex-start;
 }
 
-.file-explorer {
+.window {
   background-color: rgb(32, 32, 32);
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 8px 0px;
   outline: rgb(77, 77, 77) solid 1px;
