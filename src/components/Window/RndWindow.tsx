@@ -42,6 +42,7 @@ export const RndWindow = ({
       bounds="window"
       dragHandleClassName="handleDrag"
       disableDragging={window.innerWidth <= 1300 ? true : false}
+      enableResizing={window.innerWidth > 1300 ? true : false}
       maxWidth={window.innerWidth}
       maxHeight={window.innerHeight}
     >
