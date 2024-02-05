@@ -1,26 +1,21 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
-import { FileGrid } from "../Files/FileGrid";
 import { RndWindow } from "../Window/RndWindow";
+import { FaArrowLeft, FaArrowRight, FaRotateRight } from "react-icons/fa6";
 
-type FileExplorerProps = {
+type BrowserProps = {
   title: string;
-  projects: {
-    name: string;
-    icon: string;
-    tooltip?: string;
-    click: () => void;
-  }[];
+  children: React.ReactNode;
   isOpen: boolean;
   handleClose: () => void;
 };
 
-export const FileExplorerModal = ({
+export const BrowserModal = ({
   title,
-  projects,
+  children,
   isOpen,
   handleClose,
-}: FileExplorerProps) => {
+}: BrowserProps) => {
   return (
     <Transition.Root
       show={isOpen}
@@ -53,8 +48,8 @@ export const FileExplorerModal = ({
               >
                 <div className="w-full h-full absolute cursor-auto z-10">
                   <section className="window h-full">
-                    <header className="border-b border-[rgb(43,43,43)] bg-[rgb(43,43,43)] flex relative top-0 h-fit p-2 items-center handleDrag">
-                      <nav className="flex w-1/3">
+                    <header className="border-b border-[rgb(43,43,43)] bg-[rgb(43,43,43)] flex relative top-0 h-fit p-2 handleDrag flex-col">
+                      <nav className="flex">
                         <button
                           className="w-4 h-4 mr-5 rounded-[50%] bg-[#FF5D5B] flex items-center justify-center"
                           onClick={() => handleClose()}
@@ -62,22 +57,18 @@ export const FileExplorerModal = ({
                         <button className="w-4 h-4 mr-5 rounded-[50%] bg-[#FFBB39] flex items-center justify-center cursor-default" />
                         <button className="w-4 h-4 mr-5 rounded-[50%] bg-[#00CD4E] flex items-center justify-center cursor-default" />
                       </nav>
-                      <Dialog.Title
-                        as="p"
-                        className="w-1/3"
-                      >
-                        {title}
-                      </Dialog.Title>
-                      <div className="w-1/3" />
+                      <aside className="flex items-center py-2">
+                        <div className="flex items-center gap-4 mr-4 w-fit">
+                          <FaArrowLeft />
+                          <FaArrowRight />
+                          <FaRotateRight />
+                        </div>
+                        <div className="rounded-md bg-[rgb(33,33,33)] w-full mr-4 text-start">
+                          <h1 className="ml-2 py-1">{title}</h1>
+                        </div>
+                      </aside>
                     </header>
-                    <div className="h-[calc(100%-40px)]">
-                      <section className="py-1 overflow-auto h-[calc(100%-24px)] grid px-1">
-                        <FileGrid files={projects} />
-                      </section>
-                      <footer className="flex items-center bg-[rgb(51,51,51)] text-xs font-extralight px-1 w-full h-6">
-                        {projects.length} items
-                      </footer>
-                    </div>
+                    <div className="h-[calc(100%-80px)] m-2">{children}</div>
                   </section>
                 </div>
               </RndWindow>
