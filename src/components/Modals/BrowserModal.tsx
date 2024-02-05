@@ -26,7 +26,7 @@ export const BrowserModal = ({
         className="fixed inset-0 z-10 overflow-y-auto"
         onClose={handleClose}
       >
-        <div className="flex min-h-full py-10 px-4 text-center sm:p-0">
+        <div className="flex min-h-full text-center sm:p-0">
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -40,14 +40,14 @@ export const BrowserModal = ({
               <RndWindow
                 defaultX="center"
                 defaultY="center"
-                defaultHeight={560}
-                defaultWidth={1200}
+                defaultHeight={window.innerHeight < 525 ? 0 : 525}
+                defaultWidth={window.innerWidth < 500 ? 0 : 500}
                 minWidth={350}
-                minHeight={250}
+                minHeight={525}
                 lockAspectRatio
               >
                 <div className="w-full h-full absolute cursor-auto z-10">
-                  <section className="window h-full">
+                  <section className="window h-full overflow-y-auto">
                     <header className="border-b border-[rgb(43,43,43)] bg-[rgb(43,43,43)] flex relative top-0 h-fit p-2 handleDrag flex-col">
                       <nav className="flex">
                         <button
@@ -68,7 +68,7 @@ export const BrowserModal = ({
                         </div>
                       </aside>
                     </header>
-                    <div className="h-[calc(100%-80px)] m-2">{children}</div>
+                    <div>{children}</div>
                   </section>
                 </div>
               </RndWindow>

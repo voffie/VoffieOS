@@ -41,6 +41,9 @@ export const RndWindow = ({
       lockAspectRatio={lockAspectRatio}
       bounds="window"
       dragHandleClassName="handleDrag"
+      disableDragging={window.innerWidth <= 1300 ? true : false}
+      maxWidth={window.innerWidth}
+      maxHeight={window.innerHeight}
     >
       {children}
     </Rnd>

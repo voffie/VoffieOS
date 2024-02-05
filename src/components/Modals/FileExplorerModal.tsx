@@ -31,7 +31,7 @@ export const FileExplorerModal = ({
         className="fixed inset-0 z-10 overflow-y-auto"
         onClose={handleClose}
       >
-        <div className="flex min-h-full py-10 px-4 text-center sm:p-0">
+        <div className="flex min-h-full text-center sm:p-0">
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -45,8 +45,8 @@ export const FileExplorerModal = ({
               <RndWindow
                 defaultX="center"
                 defaultY="center"
-                defaultHeight={560}
-                defaultWidth={1200}
+                defaultHeight={window.innerHeight < 560 ? 0 : 560}
+                defaultWidth={window.innerWidth < 1200 ? 0 : 1200}
                 minWidth={350}
                 minHeight={250}
                 lockAspectRatio
@@ -70,7 +70,7 @@ export const FileExplorerModal = ({
                       </Dialog.Title>
                       <div className="w-1/3" />
                     </header>
-                    <div className="h-[calc(100%-40px)]">
+                    <div className="h-[calc(100%-40px)] overflow-y-auto">
                       <section className="py-1 overflow-auto h-[calc(100%-24px)] grid px-1">
                         <FileGrid files={projects} />
                       </section>
