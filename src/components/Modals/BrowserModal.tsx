@@ -38,15 +38,15 @@ export const BrowserModal = ({
           >
             <div>
               <RndWindow
-                defaultX="center"
-                defaultY="center"
                 defaultHeight={window.innerHeight < 525 ? 0 : 525}
-                defaultWidth={window.innerWidth < 500 ? 0 : 500}
-                minWidth={350}
-                minHeight={525}
+                defaultWidth={
+                  window.innerWidth < 500 ? window.innerWidth - 20 : 500
+                }
+                minWidth={window.innerWidth < 350 ? 0 : 350}
+                minHeight={window.innerHeight < 525 ? 0 : 525}
                 lockAspectRatio
               >
-                <div className="w-full h-full absolute cursor-auto z-10">
+                <div className="h-full cursor-auto z-10">
                   <section className="window h-full overflow-y-auto">
                     <header className="border-b border-[rgb(43,43,43)] bg-[rgb(43,43,43)] flex relative top-0 h-fit p-2 handleDrag flex-col">
                       <nav className="flex">
@@ -64,7 +64,7 @@ export const BrowserModal = ({
                           <FaRotateRight />
                         </div>
                         <div className="rounded-md bg-[rgb(33,33,33)] w-full mr-4 text-start">
-                          <h1 className="ml-2 py-1">{title}</h1>
+                          <p className="ml-2 py-1">{title}</p>
                         </div>
                       </aside>
                     </header>

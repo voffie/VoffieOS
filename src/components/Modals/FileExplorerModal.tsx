@@ -43,15 +43,15 @@ export const FileExplorerModal = ({
           >
             <div>
               <RndWindow
-                defaultX="center"
-                defaultY="center"
                 defaultHeight={window.innerHeight < 560 ? 0 : 560}
-                defaultWidth={window.innerWidth < 1200 ? 0 : 1200}
-                minWidth={350}
-                minHeight={250}
+                defaultWidth={
+                  window.innerWidth < 1200 ? window.innerWidth - 20 : 1200
+                }
+                minWidth={window.innerWidth < 350 ? 0 : 350}
+                minHeight={window.innerHeight < 250 ? 0 : 250}
                 lockAspectRatio
               >
-                <div className="w-full h-full absolute cursor-auto z-10">
+                <div className="w-full h-full z-10">
                   <section className="window h-full">
                     <header className="border-b border-[rgb(43,43,43)] bg-[rgb(43,43,43)] flex relative top-0 h-fit p-2 items-center handleDrag">
                       <nav className="flex w-1/3">
