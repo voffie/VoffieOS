@@ -5,8 +5,6 @@ type RndProps = {
   children: ReactNode;
   defaultWidth: number;
   defaultHeight: number;
-  defaultX: "center" | number;
-  defaultY: "center" | number;
   minWidth?: number;
   minHeight?: number;
   lockAspectRatio?: boolean;
@@ -14,8 +12,6 @@ type RndProps = {
 
 export const RndWindow = ({
   children,
-  defaultX,
-  defaultY,
   defaultHeight,
   defaultWidth,
   minWidth,
@@ -25,14 +21,8 @@ export const RndWindow = ({
   return (
     <Rnd
       default={{
-        x:
-          defaultX === "center"
-            ? Math.floor(window.innerWidth / 2 - defaultWidth / 2)
-            : defaultX,
-        y:
-          defaultY === "center"
-            ? Math.floor(window.innerHeight / 2 - defaultHeight / 2)
-            : defaultY,
+        x: 0,
+        y: 0,
         width: defaultWidth,
         height: defaultHeight,
       }}

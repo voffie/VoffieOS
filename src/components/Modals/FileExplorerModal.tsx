@@ -43,8 +43,6 @@ export const FileExplorerModal = ({
           >
             <div>
               <RndWindow
-                defaultX="center"
-                defaultY="center"
                 defaultHeight={window.innerHeight < 560 ? 0 : 560}
                 defaultWidth={
                   window.innerWidth < 1200 ? window.innerWidth - 20 : 1200

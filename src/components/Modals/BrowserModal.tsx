@@ -38,8 +38,6 @@ export const BrowserModal = ({
           >
             <div>
               <RndWindow
-                defaultX="center"
-                defaultY="center"
                 defaultHeight={window.innerHeight < 525 ? 0 : 525}
                 defaultWidth={
                   window.innerWidth < 500 ? window.innerWidth - 20 : 500
