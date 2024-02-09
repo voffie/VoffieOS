@@ -16,7 +16,7 @@
   </p>
 </p>
 
-<p align="center"> VoffieOS is meant to imitate a desktop enviroment and is inspired by Dustin Brett's [daedalOS](https://github.com/DustinBrett/daedalOS)</p>
+<p align="center"> VoffieOS is meant to imitate a desktop environment and is inspired by Dustin Brett's <a href="https://github.com/DustinBrett/daedalOS">daedalOS</a></p>
 
 <p align="center">
   <img src="public/images/initial.png" alt="Initial layout" >
@@ -26,7 +26,7 @@
 
 ### System
 
-- Double click to open files
+- Double-click to open files
 - Tooltips shown on hover
 - Resizeable & Draggable windows using [react-rnd](https://github.com/bokuweb/react-rnd)
 
