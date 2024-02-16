@@ -25,11 +25,13 @@ export const Taskbar = ({
       img: "images/linkedin_logo.png",
       click: () =>
         window.open("https://linkedin.com/in/viktor-söderborg-3217a123b"),
+      alt: "LinkedIn logo",
     },
     {
       name: "GitHub",
       img: "files/icon/github_icon.svg",
       click: () => window.open("https://github.com/voffiedev"),
+      alt: "GitHub logo",
     },
   ];
   return (
@@ -45,6 +47,7 @@ export const Taskbar = ({
               <img
                 className="rounded-md w-6 h-6"
                 src={item.img}
+                alt={item.alt}
               />
               <span className="tooltip-text">{item.name}</span>
             </div>

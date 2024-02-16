@@ -22,10 +22,14 @@ export const File = ({ data }: FileProps) => {
             <img
               className="absolute aspect-[1] max-h-12 min-h-12 max-w-12 min-w-12 object-contain pointer-events-none"
               src={data.icon}
+              alt="File icon"
             />
           </picture>
           <picture className="absolute">
-            <img src="files/icon/shortcut.webp" />
+            <img
+              src="files/icon/shortcut.webp"
+              alt="Shortcut icon"
+            />
           </picture>
           <figcaption className="my-1 py-1 break-words text-xs pointer-events-none">
             {data.name}
