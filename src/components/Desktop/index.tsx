@@ -41,6 +41,8 @@ export const Desktop = ({ children }: Props) => {
       <Taskbar
         setIsAboutModalOpen={setIsAboutModalOpen}
         setIsProjectModalOpen={setIsProjectModalOpen}
+        isAboutModalOpen={isAboutModalOpen}
+        isProjectModalOpen={isProjectModalOpen}
       />
       <AboutModal
         isOpen={isAboutModalOpen}

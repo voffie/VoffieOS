@@ -1,12 +1,16 @@
 import { SlDocs, SlUser } from "react-icons/sl";
 
 type TaskbarProps = {
+  isAboutModalOpen: boolean;
   setIsAboutModalOpen: (value: boolean) => void;
+  isProjectModalOpen: boolean;
   setIsProjectModalOpen: (value: boolean) => void;
 };
 
 export const Taskbar = ({
+  isAboutModalOpen,
   setIsAboutModalOpen,
+  isProjectModalOpen,
   setIsProjectModalOpen,
 }: TaskbarProps) => {
   const items = [
@@ -14,11 +18,13 @@ export const Taskbar = ({
       name: "About me",
       icon: <SlUser />,
       click: setIsAboutModalOpen,
+      isOpen: isAboutModalOpen,
     },
     {
       name: "Projects",
       icon: <SlDocs />,
       click: setIsProjectModalOpen,
+      isOpen: isProjectModalOpen,
     },
     {
       name: "LinkedIn",
@@ -52,7 +58,7 @@ export const Taskbar = ({
             <p
               key={index}
               className="cursor-pointer hover-text"
-              onClick={() => item.click(true)}
+              onClick={() => item.click(!item.isOpen)}
             >
               {item.icon && item.icon}
               <span className="tooltip-text">{item.name}</span>
