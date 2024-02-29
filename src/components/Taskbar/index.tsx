@@ -41,32 +41,33 @@ export const Taskbar = ({
     },
   ];
   return (
-    <nav className="absolute bottom-0 h-10 bar-bg left-0 right-0 flex justify-center items-center">
-      <div className="w-fit flex items-center justify-center gap-5">
+    <nav className="bar-bg absolute bottom-0 left-0 right-0 flex h-10 items-center justify-center">
+      <div className="flex w-fit items-center justify-center gap-5">
         {items.map((item, index) =>
           item.img ? (
             <div
               key={index}
-              className="cursor-pointer hover-text"
+              className="hover-text cursor-pointer"
               onClick={() => item.click()}
             >
               <img
-                className="rounded-md w-6 h-6"
+                className="h-6 w-6 rounded-md"
                 src={item.img}
                 alt={item.alt}
+                loading="lazy"
               />
               <span className="tooltip-text">{item.name}</span>
             </div>
           ) : (
             <p
               key={index}
-              className="cursor-pointer hover-text"
+              className="hover-text cursor-pointer text-white"
               onClick={() => item.click(!item.isOpen)}
             >
               {item.icon && item.icon}
               <span className="tooltip-text">{item.name}</span>
             </p>
-          )
+          ),
         )}
       </div>
     </nav>

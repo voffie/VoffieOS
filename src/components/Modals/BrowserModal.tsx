@@ -23,24 +23,24 @@ export const BrowserModal = ({
       minHeight={window.innerHeight < 525 ? 0 : 525}
       lockAspectRatio
     >
-      <div className="h-full cursor-auto z-10">
+      <div className="z-10 h-full cursor-auto text-white">
         <section className="window h-full overflow-y-auto">
-          <header className="border-b border-[rgb(43,43,43)] bg-[rgb(43,43,43)] flex relative top-0 h-fit p-2 handleDrag flex-col">
+          <header className="handleDrag relative top-0 flex h-fit flex-col border-b border-[rgb(43,43,43)] bg-[rgb(43,43,43)] p-2">
             <nav className="flex">
               <button
-                className="w-4 h-4 mr-5 rounded-[50%] bg-[#FF5D5B] flex items-center justify-center"
+                className="mr-5 flex h-4 w-4 items-center justify-center rounded-[50%] bg-[#FF5D5B]"
                 onClick={() => handleClose()}
               />
-              <button className="w-4 h-4 mr-5 rounded-[50%] bg-[#FFBB39] flex items-center justify-center cursor-default" />
-              <button className="w-4 h-4 mr-5 rounded-[50%] bg-[#00CD4E] flex items-center justify-center cursor-default" />
+              <button className="mr-5 flex h-4 w-4 cursor-default items-center justify-center rounded-[50%] bg-[#FFBB39]" />
+              <button className="mr-5 flex h-4 w-4 cursor-default items-center justify-center rounded-[50%] bg-[#00CD4E]" />
             </nav>
             <aside className="flex items-center py-2">
-              <div className="flex items-center gap-4 mr-4 w-fit">
+              <div className="mr-4 flex w-fit items-center gap-4">
                 <FaArrowLeft />
                 <FaArrowRight />
                 <FaRotateRight />
               </div>
-              <div className="rounded-md bg-[rgb(33,33,33)] w-full mr-4 text-start">
+              <div className="mr-4 w-full rounded-md bg-[rgb(33,33,33)] text-start">
                 <p className="ml-2 py-1">{title}</p>
               </div>
             </aside>

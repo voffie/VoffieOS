@@ -12,13 +12,14 @@ export const AboutModal = ({ isOpen, handleClose }: Props) => {
       isOpen={isOpen}
       handleClose={handleClose}
     >
-      <section className="flex flex-col items-center p-2 h-full">
+      <section className="flex h-full flex-col items-center p-2">
         <img
           src="images/selfie.JPG"
-          className="h-40 w-28 my-2"
+          className="my-2 h-40 w-28"
+          loading="lazy"
         />
         <section>
-          <p>
+          <p className="text-white">
             Hey, my name is Viktor Söderborg also known as Voffie online. I'm a
             Swedish web- & software developer and I got introduced to computers
             at an early age and have been interested in them as far as I can

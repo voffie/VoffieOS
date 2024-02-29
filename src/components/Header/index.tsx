@@ -1,6 +1,6 @@
 export const Header = () => {
   return (
-    <nav className="absolute top-0 left-0 right-0 h-7 bar-bg flex items-center justify-center">
+    <nav className="bar-bg absolute left-0 right-0 top-0 flex h-7 items-center justify-center text-white">
       <p>{new Date().toDateString()}</p>
     </nav>
   );

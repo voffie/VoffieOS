@@ -28,25 +28,25 @@ export const FileExplorerModal = ({
       lockAspectRatio
       isOpen={isOpen}
     >
-      <div className="w-full h-full z-10">
+      <div className="z-10 h-full w-full text-white">
         <section className="window h-full">
-          <header className="border-b border-[rgb(43,43,43)] bg-[rgb(43,43,43)] flex relative top-0 h-fit p-2 items-center handleDrag">
+          <header className="handleDrag relative top-0 flex h-fit items-center border-b border-[rgb(43,43,43)] bg-[rgb(43,43,43)] p-2">
             <nav className="flex w-1/3">
               <button
-                className="w-4 h-4 mr-5 rounded-[50%] bg-[#FF5D5B] flex items-center justify-center"
+                className="mr-5 flex h-4 w-4 items-center justify-center rounded-[50%] bg-[#FF5D5B]"
                 onClick={() => handleClose()}
               />
-              <button className="w-4 h-4 mr-5 rounded-[50%] bg-[#FFBB39] flex items-center justify-center cursor-default" />
-              <button className="w-4 h-4 mr-5 rounded-[50%] bg-[#00CD4E] flex items-center justify-center cursor-default" />
+              <button className="mr-5 flex h-4 w-4 cursor-default items-center justify-center rounded-[50%] bg-[#FFBB39]" />
+              <button className="mr-5 flex h-4 w-4 cursor-default items-center justify-center rounded-[50%] bg-[#00CD4E]" />
             </nav>
-            <p className="w-1/3">{title}</p>
+            <p className="w-1/3 text-center">{title}</p>
             <div className="w-1/3" />
           </header>
           <div className="h-[calc(100%-40px)] overflow-y-auto">
-            <section className="py-1 overflow-auto h-[calc(100%-24px)] grid px-1">
+            <section className="grid h-[calc(100%-24px)] overflow-auto px-1 py-1">
               <FileGrid files={projects} />
             </section>
-            <footer className="flex items-center bg-[rgb(51,51,51)] text-xs font-extralight px-1 w-full h-6">
+            <footer className="flex h-6 w-full items-center bg-[rgb(51,51,51)] px-1 text-xs font-extralight">
               {projects.length} items
             </footer>
           </div>
