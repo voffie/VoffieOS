@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import { fetchRepos } from "../../lib/github";
 import { FileExplorerModal } from "./FileExplorerModal";
 
 type Props = {
@@ -5,39 +7,45 @@ type Props = {
   handleClose: () => void;
 };
 
-const projects = [
-  {
-    name: "Codele - Demo",
-    icon: "files/icon/html_icon.svg",
-    tooltip: "A daily programming language guessing game",
-    click: () => {
-      window.open("https://codele-voffiedev.vercel.app/");
-    },
-  },
-  {
-    name: "Codele - Github",
-    icon: "files/icon/github_icon.svg",
-    click: () => {
-      window.open("https://github.com/VoffieDev/Codele");
-    },
-  },
-  {
-    name: "Teapot - Github",
-    icon: "files/icon/github_icon.svg",
-    tooltip: "A webserver in Ruby",
-    click: () => {
-      window.open("https://github.com/VoffieDev/Teapot");
-    },
-  },
-];
+export type Repo = {
+  name: string;
+  icon: string;
+  tooltip: string;
+  click: () => void;
+};
+
+const loadRepos = async () => {
+  const res = await fetchRepos();
+  const output: Repo[] = [];
+  res.data
+    .filter((repo) => repo.name !== "VoffieDev")
+    .map((repo) =>
+      output.push({
+        name: repo.name,
+        icon: "files/icon/github_icon.svg",
+        tooltip: `Location: ~/server/projects/${repo.name}`,
+        click: () => {
+          window.open(repo.html_url);
+        },
+      }),
+    );
+  return output;
+};
 
 export const ProjectModal = ({ isOpen, handleClose }: Props) => {
+  const [projects, setProjects] = useState<Repo[]>();
+
+  useEffect(() => {
+    loadRepos().then((res) => setProjects(res));
+  }, []);
   return (
-    <FileExplorerModal
-      title="Projects"
-      isOpen={isOpen}
-      handleClose={handleClose}
-      projects={projects}
-    />
+    projects && (
+      <FileExplorerModal
+        title="Projects"
+        isOpen={isOpen}
+        handleClose={handleClose}
+        projects={projects}
+      />
+    )
   );
 };

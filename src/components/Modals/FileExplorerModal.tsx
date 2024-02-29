@@ -1,14 +1,10 @@
 import { FileGrid } from "../Files/FileGrid";
 import { RndWindow } from "../Window/RndWindow";
+import { Repo } from "./ProjectModal";
 
 type FileExplorerProps = {
   title: string;
-  projects: {
-    name: string;
-    icon: string;
-    tooltip?: string;
-    click: () => void;
-  }[];
+  projects: Repo[];
   isOpen: boolean;
   handleClose: () => void;
 };
