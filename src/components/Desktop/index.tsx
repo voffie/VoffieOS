@@ -1,12 +1,8 @@
-import { ReactNode, useState } from "react";
+import { useState } from "react";
 import { AboutModal } from "../Modals/AboutModal";
 import { ProjectModal } from "../Modals/ProjectModal";
 import { Taskbar } from "../Taskbar";
 import { FileGrid } from "../Files/FileGrid";
-
-type Props = {
-  children: ReactNode;
-};
 
 const files = [
   {
@@ -31,13 +27,12 @@ const files = [
   },
 ];
 
-export const Desktop = ({ children }: Props) => {
+export const Desktop = () => {
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
   return (
     <>
       <FileGrid files={files} />
-      {children}
       <Taskbar
         setIsAboutModalOpen={setIsAboutModalOpen}
         setIsProjectModalOpen={setIsProjectModalOpen}

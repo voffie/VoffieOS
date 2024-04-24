@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Desktop } from "./components/Desktop";
-import { Header } from "./components/Header";
 import { LoginWindow } from "./components/Window/LoginWindow";
 
 function App() {
@@ -13,9 +12,7 @@ function App() {
       {isSignIn && <LoginWindow />}
       {!isSignIn && (
         <div className="desktop h-full">
-          <Desktop>
-            <Header />
-          </Desktop>
+          <Desktop />
         </div>
       )}
     </main>
