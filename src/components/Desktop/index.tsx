@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { AboutModal } from "../Modals/AboutModal";
-import { ProjectModal } from "../Modals/ProjectModal";
-import { Taskbar } from "../Taskbar";
-import { FileGrid } from "../Files/FileGrid";
+import { FileGrid } from "@/components/Files/FileGrid";
+import { Taskbar } from "@/components/Taskbar";
+import { About } from "@/components/Apps/About";
+import { Project } from "@/components/Apps/Project";
 
 const files = [
   {
@@ -27,26 +27,28 @@ const files = [
   },
 ];
 
-export const Desktop = () => {
-  const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
-  const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
+const Desktop = () => {
+  const [isAboutAppOpen, setIsAboutAppOpen] = useState(false);
+  const [isProjectAppOpen, setIsProjectAppOpen] = useState(false);
   return (
     <>
       <FileGrid files={files} />
       <Taskbar
-        setIsAboutModalOpen={setIsAboutModalOpen}
-        setIsProjectModalOpen={setIsProjectModalOpen}
-        isAboutModalOpen={isAboutModalOpen}
-        isProjectModalOpen={isProjectModalOpen}
+        setIsAboutAppOpen={setIsAboutAppOpen}
+        setIsProjectAppOpen={setIsProjectAppOpen}
+        isAboutAppOpen={isAboutAppOpen}
+        isProjectAppOpen={isProjectAppOpen}
       />
-      <AboutModal
-        isOpen={isAboutModalOpen}
-        handleClose={() => setIsAboutModalOpen(false)}
+      <About
+        isOpen={isAboutAppOpen}
+        handleClose={() => setIsAboutAppOpen(false)}
       />
-      <ProjectModal
-        isOpen={isProjectModalOpen}
-        handleClose={() => setIsProjectModalOpen(false)}
+      <Project
+        isOpen={isProjectAppOpen}
+        handleClose={() => setIsProjectAppOpen(false)}
       />
     </>
   );
 };
+
+export default Desktop;

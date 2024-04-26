@@ -1,20 +1,23 @@
-import { BrowserModal } from "./BrowserModal";
+import { Browser } from "@/components/Programs/Browser";
+import Image from "next/image"
+import selfie from "../../../public/images/selfie.webp"
 
 type Props = {
   isOpen: boolean;
   handleClose: () => void;
 };
 
-export const AboutModal = ({ isOpen, handleClose }: Props) => {
+export const About = ({ isOpen, handleClose }: Props) => {
   return (
-    <BrowserModal
+    <Browser
       title="~/server/about-me.html"
       isOpen={isOpen}
       handleClose={handleClose}
     >
       <section className="flex h-full flex-col items-center p-2">
-        <img
-          src="images/selfie.JPG"
+        <Image
+          src={selfie}
+          alt="Selfie of VoffieDev"
           className="my-2 h-40 w-28"
           loading="lazy"
         />
@@ -31,6 +34,6 @@ export const AboutModal = ({ isOpen, handleClose }: Props) => {
           </p>
         </section>
       </section>
-    </BrowserModal>
+    </Browser>
   );
 };

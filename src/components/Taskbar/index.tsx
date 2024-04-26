@@ -1,74 +1,64 @@
 import { SlDocs, SlUser } from "react-icons/sl";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 type TaskbarProps = {
-  isAboutModalOpen: boolean;
-  setIsAboutModalOpen: (value: boolean) => void;
-  isProjectModalOpen: boolean;
-  setIsProjectModalOpen: (value: boolean) => void;
+  isAboutAppOpen: boolean;
+  setIsAboutAppOpen: (value: boolean) => void;
+  isProjectAppOpen: boolean;
+  setIsProjectAppOpen: (value: boolean) => void;
 };
 
 export const Taskbar = ({
-  isAboutModalOpen,
-  setIsAboutModalOpen,
-  isProjectModalOpen,
-  setIsProjectModalOpen,
+  isAboutAppOpen,
+  setIsAboutAppOpen,
+  isProjectAppOpen,
+  setIsProjectAppOpen,
 }: TaskbarProps) => {
+  const currentDate = new Date();
   const items = [
     {
       name: "About me",
       icon: <SlUser />,
-      click: setIsAboutModalOpen,
-      isOpen: isAboutModalOpen,
+      click: setIsAboutAppOpen,
+      isOpen: isAboutAppOpen,
     },
     {
       name: "Projects",
       icon: <SlDocs />,
-      click: setIsProjectModalOpen,
-      isOpen: isProjectModalOpen,
+      click: setIsProjectAppOpen,
+      isOpen: isProjectAppOpen,
     },
     {
       name: "LinkedIn",
-      img: "images/linkedin_logo.png",
+      icon: <FaLinkedin className="size-5" />,
       click: () =>
         window.open("https://linkedin.com/in/viktor-söderborg-3217a123b"),
       alt: "LinkedIn logo",
     },
     {
       name: "GitHub",
-      img: "files/icon/github_icon.svg",
+      icon: <FaGithub className="size-5" />,
       click: () => window.open("https://github.com/voffiedev"),
       alt: "GitHub logo",
     },
   ];
   return (
-    <nav className="bar-bg absolute bottom-0 left-0 right-0 flex h-10 items-center justify-center">
+    <nav className="bar-bg absolute bottom-0 left-0 right-0 flex h-10 items-center justify-between text-white">
+      <div className="ml-4" />
       <div className="flex w-fit items-center justify-center gap-5">
-        {items.map((item, index) =>
-          item.img ? (
-            <div
-              key={index}
-              className="hover-text cursor-pointer"
-              onClick={() => item.click()}
-            >
-              <img
-                className="h-6 w-6 rounded-md"
-                src={item.img}
-                alt={item.alt}
-                loading="lazy"
-              />
-              <span className="tooltip-text">{item.name}</span>
-            </div>
-          ) : (
-            <p
-              key={index}
-              className="hover-text cursor-pointer text-white"
-              onClick={() => item.click(!item.isOpen)}
-            >
-              {item.icon && item.icon}
-              <span className="tooltip-text">{item.name}</span>
-            </p>
-          ),
-        )}
+        {items.map((item, index) => (
+          <p
+            key={index}
+            className="tooltip cursor-pointer"
+            onClick={() => item.click(!item.isOpen)}
+            title={item.name}
+          >
+            {item.icon && item.icon}
+          </p>
+        ))}
+      </div>
+      <div className="mr-4">
+        <p>{`${("0" + currentDate.getDate()).slice(-2)}-${("0" + (currentDate.getMonth() + 1)).slice(-2)}-${currentDate.getFullYear()}`}</p>
       </div>
     </nav>
   );

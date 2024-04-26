@@ -1,4 +1,4 @@
-import { File } from "./File";
+import { File } from "@/components/Files/File";
 
 type GridProps = {
   files: {

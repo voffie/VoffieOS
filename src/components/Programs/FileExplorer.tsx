@@ -1,6 +1,6 @@
 import { FileGrid } from "../Files/FileGrid";
 import { RndWindow } from "../Window/RndWindow";
-import type { Repo } from "./ProjectModal";
+import type { Repo } from "@/types/Repo";
 
 type FileExplorerProps = {
   title: string;
@@ -9,7 +9,7 @@ type FileExplorerProps = {
   handleClose: () => void;
 };
 
-export const FileExplorerModal = ({
+export const FileExplorer = ({
   title,
   projects,
   isOpen,
@@ -29,11 +29,11 @@ export const FileExplorerModal = ({
           <header className="handleDrag relative top-0 flex h-fit items-center border-b border-[rgb(43,43,43)] bg-[rgb(43,43,43)] p-2">
             <nav className="flex w-1/3">
               <button
-                className="mr-5 flex h-4 w-4 items-center justify-center rounded-[50%] bg-[#FF5D5B]"
+                className="mr-5 flex size-4 items-center justify-center rounded-[50%] bg-[#FF5D5B]"
                 onClick={() => handleClose()}
               />
-              <button className="mr-5 flex h-4 w-4 cursor-default items-center justify-center rounded-[50%] bg-[#FFBB39]" />
-              <button className="mr-5 flex h-4 w-4 cursor-default items-center justify-center rounded-[50%] bg-[#00CD4E]" />
+              <button className="mr-5 flex size-4 cursor-default items-center justify-center rounded-[50%] bg-[#FFBB39]" />
+              <button className="mr-5 flex size-4 cursor-default items-center justify-center rounded-[50%] bg-[#00CD4E]" />
             </nav>
             <p className="w-1/3 text-center">{title}</p>
             <div className="w-1/3" />

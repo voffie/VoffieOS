@@ -32,13 +32,9 @@
 }
 
 .desktop {
-  background: url("/images/wallpaper.png") no-repeat center center;
-}
-
-@media only screen and (max-width: 1300px) {
-  .desktop {
-    background: #151515;
-  }
+  background: url("/images/wolf.webp") no-repeat center center;
+  background-size: 20rem;
+  background-color: #233040;
 }
 
 .bar-bg {
@@ -46,41 +42,34 @@
   background-color: rgba(26, 26, 26, 0.7);
 }
 
-.tooltip-text {
-  visibility: hidden;
-  position: absolute;
-  z-index: 1;
-  width: 100px;
-  color: white;
-  background-color: #192733;
-  padding: 5px;
-  top: -40px;
-  left: 75%;
-  border: 1px solid white;
-}
-
-.tooltip-file-text {
-  visibility: hidden;
-  position: absolute;
-  z-index: 1;
-  width: fit-content;
-  color: white;
-  background-color: #192733;
-  padding: 5px;
-  top: 75px;
-  left: 110%;
-  border: 1px solid white;
-}
-
-.hover-text {
+.tooltip,
+.tooltip-file {
   position: relative;
-  display: inline-block;
-  text-align: center;
 }
 
-.hover-text:hover .tooltip-text,
-.hover-text:hover .tooltip-file-text {
-  visibility: visible;
+.tooltip:hover:after {
+  backdrop-filter: blur(5px);
+  background-color: rgba(26, 26, 26, 0.7);
+  border-radius: 5px;
+  bottom: 26px;
+  color: #fff;
+  content: attr(title);
+  padding: 10px;
+  left: -120%;
+  position: absolute;
+  z-index: 98;
+}
+
+.tooltip-file:hover:after {
+  backdrop-filter: blur(5px);
+  background-color: rgba(26, 26, 26, 0.7);
+  border-radius: 5px;
+  top: 75px;
+  color: #fff;
+  content: attr(title);
+  padding: 5px;
+  position: absolute;
+  z-index: 98;
 }
 
 .file-grid {

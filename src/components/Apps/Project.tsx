@@ -1,25 +1,19 @@
 import { useEffect, useState } from "react";
-import { fetchRepos } from "../../lib/github";
-import { FileExplorerModal } from "./FileExplorerModal";
+import type { Repo } from "@/types/Repo";
+import { FileExplorer } from "@/components/Programs/FileExplorer";
 
 type Props = {
   isOpen: boolean;
   handleClose: () => void;
 };
 
-export type Repo = {
-  name: string;
-  icon: string;
-  tooltip: string;
-  click: () => void;
-};
-
 const loadRepos = async () => {
-  const res = await fetchRepos();
+  const res = await fetch("/api/repo");
+  const json = await res.json();
   const output: Repo[] = [];
-  res.data
-    .filter((repo) => repo.name !== "VoffieDev")
-    .map((repo) =>
+  json.repos
+    .filter((repo: typeof json.repos) => repo.name !== "VoffieDev")
+    .map((repo: typeof json.repos) =>
       output.push({
         name: repo.name,
         icon: "files/icon/github_icon.svg",
@@ -32,15 +26,16 @@ const loadRepos = async () => {
   return output;
 };
 
-export const ProjectModal = ({ isOpen, handleClose }: Props) => {
+export const Project = ({ isOpen, handleClose }: Props) => {
   const [projects, setProjects] = useState<Repo[]>();
 
   useEffect(() => {
     loadRepos().then((res) => setProjects(res));
   }, []);
+
   return (
     projects && (
-      <FileExplorerModal
+      <FileExplorer
         title="Projects"
         isOpen={isOpen}
         handleClose={handleClose}

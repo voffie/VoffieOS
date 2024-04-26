@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import Image from "next/image";
+import WolfImg from "../../../public/images/wolf.webp";
 
-export const LoginWindow = () => {
+export const LoginScreen = () => {
   const username = "guest";
   const [currentUsername, setCurrentUsername] = useState("");
   const [currentUsernameIndex, setCurrentUsernameIndex] = useState(0);
@@ -42,10 +44,9 @@ export const LoginWindow = () => {
   }, 800);
 
   return (
-    <section className="flex h-full flex-col items-center justify-center gap-4 bg-gradient-to-b from-[#151515] to-[#171717]">
-      <img src="images/wolf.png" className="size-60" loading="lazy" />
-      <div className="flex size-96 flex-col justify-evenly rounded-md bg-gradient-to-b from-[#222428] to-[#151515] p-8 text-white shadow-lg">
-        <p className="self-center text-lg font-bold">Welcome back</p>
+    <section className="flex h-full flex-col items-center justify-center bg-[#233040]">
+      <Image src={WolfImg} alt="VoffieDev logo" className="size-60" priority />
+      <div className="flex size-fit flex-col justify-evenly gap-4 rounded-md text-white">
         <div>
           <label className="block">Username</label>
           <input

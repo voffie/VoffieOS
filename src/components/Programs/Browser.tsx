@@ -8,7 +8,7 @@ type BrowserProps = {
   handleClose: () => void;
 };
 
-export const BrowserModal = ({
+export const Browser = ({
   title,
   children,
   isOpen,
@@ -28,11 +28,11 @@ export const BrowserModal = ({
           <header className="handleDrag relative top-0 flex h-fit flex-col border-b border-[rgb(43,43,43)] bg-[rgb(43,43,43)] p-2">
             <nav className="flex">
               <button
-                className="mr-5 flex h-4 w-4 items-center justify-center rounded-[50%] bg-[#FF5D5B]"
+                className="mr-5 flex size-4 items-center justify-center rounded-[50%] bg-[#FF5D5B]"
                 onClick={() => handleClose()}
               />
-              <button className="mr-5 flex h-4 w-4 cursor-default items-center justify-center rounded-[50%] bg-[#FFBB39]" />
-              <button className="mr-5 flex h-4 w-4 cursor-default items-center justify-center rounded-[50%] bg-[#00CD4E]" />
+              <button className="mr-5 flex size-4 cursor-default items-center justify-center rounded-[50%] bg-[#FFBB39]" />
+              <button className="mr-5 flex size-4 cursor-default items-center justify-center rounded-[50%] bg-[#00CD4E]" />
             </nav>
             <aside className="flex items-center py-2">
               <div className="mr-4 flex w-fit items-center gap-4">
