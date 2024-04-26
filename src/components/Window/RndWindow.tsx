@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { Rnd } from "react-rnd";
 
 type RndProps = {
@@ -8,6 +8,7 @@ type RndProps = {
   minWidth?: number;
   minHeight?: number;
   lockAspectRatio?: boolean;
+  isOpen: boolean;
 };
 
 export const RndWindow = ({
@@ -17,6 +18,7 @@ export const RndWindow = ({
   minWidth,
   minHeight,
   lockAspectRatio,
+  isOpen,
 }: RndProps) => {
   return (
     <Rnd
@@ -35,6 +37,7 @@ export const RndWindow = ({
       enableResizing={window.innerWidth > 1300 ? true : false}
       maxWidth={window.innerWidth}
       maxHeight={window.innerHeight}
+      style={{ display: isOpen ? "" : "none" }}
     >
       {children}
     </Rnd>

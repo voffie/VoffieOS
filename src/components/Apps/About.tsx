@@ -1,24 +1,28 @@
-import { BrowserModal } from "./BrowserModal";
+import { Browser } from "@/components/Programs/Browser";
+import Image from "next/image"
+import selfie from "../../../public/images/selfie.webp"
 
 type Props = {
   isOpen: boolean;
   handleClose: () => void;
 };
 
-export const AboutModal = ({ isOpen, handleClose }: Props) => {
+export const About = ({ isOpen, handleClose }: Props) => {
   return (
-    <BrowserModal
+    <Browser
       title="~/server/about-me.html"
       isOpen={isOpen}
       handleClose={handleClose}
     >
-      <section className="flex flex-col items-center p-2 h-full">
-        <img
-          src="images/selfie.JPG"
-          className="h-40 w-28 my-2"
+      <section className="flex h-full flex-col items-center p-2">
+        <Image
+          src={selfie}
+          alt="Selfie of VoffieDev"
+          className="my-2 h-40 w-28"
+          loading="lazy"
         />
         <section>
-          <p>
+          <p className="text-white">
             Hey, my name is Viktor Söderborg also known as Voffie online. I'm a
             Swedish web- & software developer and I got introduced to computers
             at an early age and have been interested in them as far as I can
@@ -30,6 +34,6 @@ export const AboutModal = ({ isOpen, handleClose }: Props) => {
           </p>
         </section>
       </section>
-    </BrowserModal>
+    </Browser>
   );
 };

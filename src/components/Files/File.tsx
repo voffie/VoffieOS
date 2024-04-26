@@ -1,3 +1,6 @@
+import Image from "next/image";
+import ShortcutImg from "../../../public/files/icon/shortcut.webp";
+
 type FileProps = {
   data: {
     name: string;
@@ -10,28 +13,28 @@ type FileProps = {
 export const File = ({ data }: FileProps) => {
   return (
     <li
-      className="h-min p-1 hover:bg-fileHover focus-within:bg-fileFocus w-fit justify-self-center"
+      className="h-min w-fit justify-self-center p-1 focus-within:bg-fileFocus hover:bg-fileHover"
       onDoubleClick={data.click ? data.click : undefined}
     >
-      <button className={`relative ${data.tooltip ? "hover-text" : ""}`}>
-        {data.tooltip && (
-          <span className="tooltip-file-text">{data.tooltip}</span>
-        )}
-        <figure className="flex flex-col -mb-1 place-items-center">
+      <button
+        className="tooltip-file relative"
+        title={data.tooltip ? data.tooltip : undefined}
+      >
+        <figure className="-mb-1 flex flex-col place-items-center">
           <picture className="h-12 w-12">
-            <img
-              className="absolute aspect-[1] max-h-12 min-h-12 max-w-12 min-w-12 object-contain pointer-events-none"
+            <Image
+              className="pointer-events-none absolute aspect-[1] size-12 object-contain"
               src={data.icon}
+              height="48"
+              width="48"
               alt="File icon"
+              loading="lazy"
             />
           </picture>
           <picture className="absolute">
-            <img
-              src="files/icon/shortcut.webp"
-              alt="Shortcut icon"
-            />
+            <Image src={ShortcutImg} alt="Shortcut icon" loading="lazy" />
           </picture>
-          <figcaption className="my-1 py-1 break-words text-xs pointer-events-none">
+          <figcaption className="pointer-events-none my-1 break-words py-1 text-xs text-white">
             {data.name}
           </figcaption>
         </figure>

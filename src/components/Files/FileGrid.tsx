@@ -1,4 +1,4 @@
-import { File } from "./File";
+import { File } from "@/components/Files/File";
 
 type GridProps = {
   files: {
@@ -13,10 +13,7 @@ export const FileGrid = ({ files }: GridProps) => {
   return (
     <ol className="file-grid ml-2">
       {files.map((file, index) => (
-        <File
-          key={index}
-          data={file}
-        />
+        <File key={index} data={file} />
       ))}
     </ol>
   );
