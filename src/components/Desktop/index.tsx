@@ -6,7 +6,7 @@ import { Project } from "@/components/Apps/Project";
 
 const files = [
   {
-    name: "CV - SWE",
+    name: "CV - Swedish",
     icon: "files/icon/pdf_icon.svg",
     tooltip: "Location: ~/server/files/viktorSoderborgCV.pdf",
     click: () => {
@@ -16,7 +16,7 @@ const files = [
     },
   },
   {
-    name: "CV - ENG",
+    name: "CV - English",
     icon: "files/icon/pdf_icon.svg",
     tooltip: "Location: ~/server/files/viktorSoderborgCV_ENG.pdf",
     click: () => {
