@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ShortcutImg from "../../../public/files/icon/shortcut.webp";
+import ShortcutImg from "@/../public/files/icon/shortcut.webp";
 
 type FileProps = {
   data: {
@@ -14,7 +14,7 @@ export const File = ({ data }: FileProps) => {
   return (
     <li
       className="h-min w-fit justify-self-center p-1 focus-within:bg-fileFocus hover:bg-fileHover"
-      onDoubleClick={data.click ? data.click : undefined}
+      onClick={data.click ? data.click : undefined}
     >
       <button
         className="tooltip-file relative"
