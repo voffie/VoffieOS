@@ -1,6 +1,6 @@
 import { Browser } from "@/components/Programs/Browser";
-import Image from "next/image"
-import selfie from "../../../public/images/selfie.webp"
+import Image from "next/image";
+import selfie from "@/../public/images/selfie.webp";
 
 type Props = {
   isOpen: boolean;

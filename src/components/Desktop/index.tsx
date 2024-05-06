@@ -6,22 +6,22 @@ import { Project } from "@/components/Apps/Project";
 
 const files = [
   {
-    name: "CV - SWE",
+    name: "CV - Swedish",
     icon: "files/icon/pdf_icon.svg",
     tooltip: "Location: ~/server/files/viktorSoderborgCV.pdf",
     click: () => {
       window.open(
-        "https://docs.google.com/document/d/1E6_XJgVuzHoJGKFhJhXDsdU7Jvs-pW5I0pBwbFQSodo/edit#heading=h.inx73jfg7qti",
+        "https://docs.google.com/document/d/1EgvIkK6Drqsr8y9noqiUbsjHSeJ6_YJTl-jpnP4j5zQ",
       );
     },
   },
   {
-    name: "CV - ENG",
+    name: "CV - English",
     icon: "files/icon/pdf_icon.svg",
     tooltip: "Location: ~/server/files/viktorSoderborgCV_ENG.pdf",
     click: () => {
       window.open(
-        "https://docs.google.com/document/d/12IgiklLd9nvC9XSBcVG79B4pV1LScGFGIfj4OKgdWgQ/edit#heading=h.inx73jfg7qti",
+        "https://docs.google.com/document/d/1iNdrInzH6AIJvwHQoJ6M8hlGrtPQAa__Xk4unLmcp-E",
       );
     },
   },

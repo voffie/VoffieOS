@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import WolfImg from "../../../public/images/wolf.webp";
+import WolfImg from "@/../public/images/wolf.webp";
 
 export const LoginScreen = () => {
   const username = "guest";
