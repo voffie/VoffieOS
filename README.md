@@ -3,7 +3,7 @@
   <p align="center">
     My portfolio website
     <br />
-    <a href="https://portfolio-voffiedev.vercel.app"><strong>portfolio-voffiedev.vercel.app »</strong></a>
+    <a href="https://portfolio-voffiedevs-projects.vercel.app"><strong>https://portfolio-voffiedevs-projects.vercel.app »</strong></a>
     <br />
     <br />
     <strong>Built with</strong>
