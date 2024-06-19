@@ -32,3 +32,7 @@ The file explorer is meant to represent the project display found on other portf
 ### Browser
 
 The browser is meant to imitate loading an html page containing the about me section of a portfolio
+
+### Sticky Note
+
+The sticky note is there to give a hint to users on what to do. It is also possible to change the text of the sticky note
