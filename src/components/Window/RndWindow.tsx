@@ -3,6 +3,8 @@ import { Rnd } from "react-rnd";
 
 type RndProps = {
   children: ReactNode;
+  defaultX?: number;
+  defaultY?: number;
   defaultWidth: number;
   defaultHeight: number;
   minWidth?: number;
@@ -13,6 +15,8 @@ type RndProps = {
 
 export const RndWindow = ({
   children,
+  defaultX,
+  defaultY,
   defaultHeight,
   defaultWidth,
   minWidth,
@@ -23,8 +27,8 @@ export const RndWindow = ({
   return (
     <Rnd
       default={{
-        x: 0,
-        y: 0,
+        x: defaultX ? defaultX : 0,
+        y: defaultY ? defaultY : 0,
         width: defaultWidth,
         height: defaultHeight,
       }}

@@ -3,6 +3,7 @@ import { FileGrid } from "@/components/Files/FileGrid";
 import { Taskbar } from "@/components/Taskbar";
 import { About } from "@/components/Apps/About";
 import { Project } from "@/components/Apps/Project";
+import { WelcomeNote } from "@/components/Apps/Welcome";
 
 const files = [
   {
@@ -33,6 +34,7 @@ const Desktop = () => {
   return (
     <>
       <FileGrid files={files} />
+      <WelcomeNote />
       <Taskbar
         setIsAboutAppOpen={setIsAboutAppOpen}
         setIsProjectAppOpen={setIsProjectAppOpen}
