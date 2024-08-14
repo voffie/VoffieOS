@@ -10,10 +10,10 @@ export const metadata: Metadata = {
     title: "VoffieOS (Viktor S' Portfolio)",
     description:
       "Dive into my portfolio and discover the projects I've been working on!",
-    url: "https://portfolio-voffiedevs-projects.vercel.app",
+    url: "https://portfolio-voffiee.vercel.app",
     type: "website",
     images: {
-      url: "https://raw.githubusercontent.com/voffiedev/voffieos/main/public/images/selfie.webp",
+      url: "https://raw.githubusercontent.com/voffie/voffieos/main/public/images/selfie.webp",
       alt: "Viktor S",
     },
   },
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description:
       "Dive into my portfolio and discover the projects I've been working on!",
     images: {
-      url: "https://raw.githubusercontent.com/voffiedev/voffieos/main/public/images/selfie.webp",
+      url: "https://raw.githubusercontent.com/voffie/voffieos/main/public/images/selfie.webp",
       alt: "Viktor S",
     },
   },

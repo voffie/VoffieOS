@@ -45,7 +45,7 @@ export const LoginScreen = () => {
 
   return (
     <section className="flex h-full flex-col items-center justify-center bg-[#233040]">
-      <Image src={WolfImg} alt="VoffieDev logo" className="size-60" priority />
+      <Image src={WolfImg} alt="Voffie logo" className="size-60" priority />
       <div className="flex size-fit flex-col justify-evenly gap-4 rounded-md text-white">
         <div>
           <label className="block">Username</label>

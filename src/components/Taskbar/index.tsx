@@ -38,7 +38,7 @@ export const Taskbar = ({
     {
       name: "GitHub",
       icon: <FaGithub className="size-5" />,
-      click: () => window.open("https://github.com/voffiedev"),
+      click: () => window.open("https://github.com/voffie"),
       alt: "GitHub logo",
     },
   ];
