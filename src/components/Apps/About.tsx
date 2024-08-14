@@ -17,7 +17,7 @@ export const About = ({ isOpen, handleClose }: Props) => {
       <section className="flex h-full flex-col items-center p-2">
         <Image
           src={selfie}
-          alt="Selfie of VoffieDev"
+          alt="Selfie of Voffie/Viktor"
           className="my-2 h-40 w-28"
           loading="lazy"
         />

@@ -12,7 +12,7 @@ const loadRepos = async () => {
   const json = await res.json();
   const output: Repo[] = [];
   json.repos
-    .filter((repo: typeof json.repos) => repo.name !== "VoffieDev")
+    .filter((repo: typeof json.repos) => repo.name !== "voffie")
     .map((repo: typeof json.repos) =>
       output.push({
         name: repo.name,

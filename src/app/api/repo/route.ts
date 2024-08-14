@@ -5,7 +5,7 @@ export async function GET() {
   const octokit = new Octokit({ auth: process.env.GITHUB_AUTH_TOKEN });
 
   const repos = await octokit.request("GET /users/{username}/repos", {
-    username: "VoffieDev",
+    username: "voffie",
   });
 
   return NextResponse.json({ repos: repos.data }, { status: 200 });

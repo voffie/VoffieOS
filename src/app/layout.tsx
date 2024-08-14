@@ -3,8 +3,30 @@ import "@/styles/globals.css";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  title: "VoffieOS",
-  description: "Viktor's portfolio",
+  title: "VoffieOS (Viktor S' Portfolio)",
+  description:
+    "Dive into my portfolio and discover the projects I've been working on!",
+  openGraph: {
+    title: "VoffieOS (Viktor S' Portfolio)",
+    description:
+      "Dive into my portfolio and discover the projects I've been working on!",
+    url: "https://portfolio-voffiee.vercel.app",
+    type: "website",
+    images: {
+      url: "https://raw.githubusercontent.com/voffie/voffieos/main/public/images/selfie.webp",
+      alt: "Viktor S",
+    },
+  },
+  twitter: {
+    card: "summary",
+    title: "VoffieOS (Viktor S' Portfolio)",
+    description:
+      "Dive into my portfolio and discover the projects I've been working on!",
+    images: {
+      url: "https://raw.githubusercontent.com/voffie/voffieos/main/public/images/selfie.webp",
+      alt: "Viktor S",
+    },
+  },
 };
 
 export default function RootLayout({
